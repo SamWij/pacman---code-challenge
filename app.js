@@ -31,22 +31,34 @@ app.cmd('pacman', function () {
 
   const location = ["NORTH", "SOUTH", "EAST", "WEST"];
   const step = ["MOVE", "LEFT", "RIGHT"];
-  const position  = [];
 
   app.log.info('Welcome to Pacman! \r\n Move Pacman on the board by entering a command:\r\n PLACE X,Y,F');
 
-  app.prompt.get('move', function (err, result) {
+  app.prompt.get('placement', function (err, result) {
+    //validation of placement entry
+    var positionArray = result.placement.split(/[,\s]+|[,\s]+/g);
+    positionArray.map(function(x){ return x.toUpperCase() });
 
-    var nameList = result.move.split(/[,\s]+|[,\s]+/g);
+    var xyPosition = positionArray[1]+","+positionArray[2]
+    var locationPosition = positionArray[3]
 
-      app.log.info(nameList);
-    // if (result.command === "END") {
-    //   app.log.info("you entered END");
-    // }
+      //validate correct placements
+      if (positionArray[0] === "PLACE") {
+
+        
+          app.log.info(xyPosition);
+      } else {
+        error()
+      }
+
+
   })
 })
 
 
+function error() {
+   app.log.info("Please enter a valid move, e.g. PLACE 0,0,NORTH");
+ }
 
 
 app.start();
