@@ -38,27 +38,37 @@ app.cmd('pacman', function () {
     //validation of placement entry
     var positionArray = result.placement.split(/[,\s]+|[,\s]+/g);
     positionArray.map(function(x){ return x.toUpperCase() });
-
+    var place = positionArray[0]
     var xyPosition = positionArray[1]+","+positionArray[2]
     var locationPosition = positionArray[3]
 
       //validate correct placements
-      if (positionArray[0] === "PLACE") {
+      if ( place === "PLACE" && board.includes(xyPosition) && location.includes(locationPosition)) {
+        app.log.info("correct");
 
-        
-          app.log.info(xyPosition);
+        moveWhere(place, xyPosition, locationPosition)
+
       } else {
-        error()
+        error(place, xy, location)
       }
+  });
 
 
-  })
-})
 
+  function error(place, xy, location) {
+     app.log.info("Please enter a valid move, e.g. PLACE 0,0,NORTH \r\n"+place+" "+xy+" "+location+"does not apply.");
+  };
 
-function error() {
-   app.log.info("Please enter a valid move, e.g. PLACE 0,0,NORTH");
- }
+  function moveWhere(place, xyPosition, locationPosition) {
+    app.prompt.get('move', function(err, moveWhere){
+      if (step.includes(move.moveWhere)) {
+        app.log.info(move.moveWhere)
+      } else {
+        app.log.info ("incorrect move")
+      }
+    });
+  }
 
+});
 
 app.start();
