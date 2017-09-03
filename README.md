@@ -22,7 +22,7 @@ Run Pacman Simulator:
 
 ```bash
 $ node pacman.js
-
+```
 Unfinished Tasks To Do:
 
 -Report Function to identify where Pacman is.
