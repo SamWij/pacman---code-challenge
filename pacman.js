@@ -18,48 +18,51 @@ function movePacman(x,y, directionFacing) {
   var movePacmanOnBoard = readlineSync.question('Move Pacman forward (MOVE), left (LEFT), right (RIGHT): ');
   movePacmanOnBoard = movePacmanOnBoard.toUpperCase()
 
+  if (directionFacing === "NORTH"){
+    switch(movePacmanOnBoard) {
+    case "RIGHT": x = x + 1;
+      break;
+    case "LEFT": x = x - 1;
+      break;
+    case "MOVE": y = y + 1;
+      break;
+    }
+  } // Close North
+  else if (directionFacing === "EAST"){
+    switch(movePacmanOnBoard) {
+    case "RIGHT": y = y + 1;
+      break;
+    case "LEFT": y = y - 1;
+      break;
+    case "MOVE": x = x + 1;
+      break;
+    }
+  } //Close East
+  else if (directionFacing === "WEST"){
+    switch(movePacmanOnBoard) {
+    case "RIGHT": y = y + 1;
+      break;
+    case "LEFT": y = y - 1;
+      break;
+    case "MOVE": x = x - 1;
+      break;
+    }
+  } //Close West
+  else if (directionFacing === "SOUTH"){
+    switch(movePacmanOnBoard) {
+    case "RIGHT": x = x - 1;
+      break;
+    case "LEFT": x = x + 1;
+      break;
+    case "MOVE": y = y - 1;
+      break;
+    }
+  } //Close South
+  else {
+    console.log("No valid move given");
+  } //Close Else
 
-  if (directionFacing === "NORTH" && movePacmanOnBoard === "LEFT") {
-      directionFacing === "WEST"
-      x = x-1
-      console.log("MOVE: "+directionFacing+"-"+x+","+y )
-  } else if (directionFacing === "NORTH" && movePacmanOnBoard === "RIGHT") {
-    directionFacing === "EAST"
-    y = y+1
-    console.log("MOVE: "+directionFacing+"-"+x+","+y )
-  } else if (directionFacing === "EAST" && movePacmanOnBoard === "LEFT") {
-    directionFacing === "NORTH"
-    y = y+1
-  } else if (directionFacing === "EAST" && movePacmanOnBoard === "RIGHT") {
-    directionFacing === "SOUTH"
-    y = y-1
-  } else if (directionFacing === "WEST" && movePacmanOnBoard === "RIGHT") {
-    directionFacing === "NORTH"
-    y = y+1
-  } else if (directionFacing === "WEST" && movePacmanOnBoard === "LEFT") {
-    directionFacing === "SOUTH"
-    y = y-1
-  } else if (directionFacing === "SOUTH" && movePacmanOnBoard === "LEFT") {
-    directionFacing === "EAST"
-    y = y-1
-  } else if (directionFacing === "SOUTH" && movePacmanOnBoard === "RIGHT") {
-    directionFacing === "WEST"
-    x = x-1
-  } else if (directionFacing === "NORTH" && movePacmanOnBoard === "MOVE") {
-    directionFacing === "NORTH"
-    y = y+1
-    console.log("MOVE: "+directionFacing+"-"+x+","+y )
-  } else if (directionFacing === "SOUTH" && movePacmanOnBoard === "MOVE") {
-    directionFacing === "SOUTH"
-    y = y-1
-  } else if (directionFacing === "EAST" && movePacmanOnBoard === "MOVE") {
-    directionFacing === "EAST"
-    x = x+1
-  } else if (directionFacing === "WEST" && movePacmanOnBoard === "MOVE") {
-    directionFacing === "WEST"
-    x = x-1
-  }
-
+  
   console.log("NEW DIRECTION: " + x + "," + y + " - " + directionFacing)
   movePacman(x,y,directionFacing)
 
