@@ -14,7 +14,7 @@ Install via git clone
 
 ```bash
 $ git clone https://github.com/SamWij/pacman-code-challenge
-$ cd pacman---code-challenge
+$ cd pacman-code-challenge
 $ npm install
 ```
 
