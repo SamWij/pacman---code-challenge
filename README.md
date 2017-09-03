@@ -4,7 +4,25 @@ Code problem details:
 
 -----------
 
-Pacman Simulator
+Pacman Simulator (Node.js)
+
+Installation:
+
+- Download Node.js
+
+Install via git clone
+
+```bash
+$ git clone https://github.com/SamWij/pacman---code-challenge.git
+$ cd pacman---code-challenge
+$ npm install
+```
+
+Run Pacman Simulator:
+
+```bash
+$ node pacman.js
+
 
 Description:
 
