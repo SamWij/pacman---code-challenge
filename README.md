@@ -23,6 +23,12 @@ Run Pacman Simulator:
 ```bash
 $ node pacman.js
 
+Unfinished Tasks To Do:
+
+-Report Function to identify where Pacman is.
+-Validation to ensure the user cannot move off the board.
+-CLI formatting tool.
+-Refactor Move function.
 
 Description:
 
