@@ -1,17 +1,22 @@
 {
   "name": "pacman",
   "version": "1.0.0",
-  "description": "The application is a simulation of Pacman moving on in a grid, of dimensions 5 units x 5 units",
-  "main": "app.js",
+  "description": "pacman",
+  "main": "pacman.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [
-    "pacman"
-  ],
-  "author": "samantha wijesinha",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SamWij/pacman---code-challenge.git"
+  },
+  "author": "Samantha Wijesinha",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SamWij/pacman---code-challenge/issues"
+  },
+  "homepage": "https://github.com/SamWij/pacman---code-challenge#readme",
   "dependencies": {
-    "flatiron": "^0.4.3"
+    "readline-sync": "^1.4.7"
   }
 }
